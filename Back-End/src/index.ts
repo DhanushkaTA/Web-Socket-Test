@@ -19,8 +19,8 @@ const io = new Server(httpServer, {
 });
 
 io.on('connection', (socket) => {
-    console.log('Client connected');
 
+    console.log('Client connected');
 
     setInterval(POST,1000);
 

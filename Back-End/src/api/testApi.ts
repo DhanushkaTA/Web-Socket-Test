@@ -8,8 +8,6 @@ export async function POST(req:any, res:any) {
 
     try {
         // (like database operations, etc.)
-
-
         let array:string[] =['Hello','🥲','😂','😘','🤣','😍','😁','🙌','💕','💌']
 
         socket.emit('message1', {message:array[num]});
