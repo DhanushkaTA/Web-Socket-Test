@@ -25,8 +25,7 @@ io.on('connection', (socket) => {
 
     console.log('Client connected');
 
-    //send data to as example
-    setInterval(POST,1000);
+
 
     //this method listening to common method data(message 1 key)
     socket.on('message1', (data) => {
@@ -38,6 +37,7 @@ io.on('connection', (socket) => {
     })
 
 
+    //send data to as example
     let interval = setInterval(POST,1000);
 
 
