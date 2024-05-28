@@ -10,7 +10,10 @@ const app = express();
 // Enable CORS for all origins
 app.use(cors());
 
+
+//create server
 const httpServer = createServer(app);
+//to enable cors
 const io = new Server(httpServer, {
     cors: {
         origin: "http://localhost:3000", // Allow requests from this origin
@@ -22,10 +25,14 @@ io.on('connection', (socket) => {
 
     console.log('Client connected');
 
+    //send data to as example
     setInterval(POST,1000);
 
+    //this method listening to common method data(message 1 key)
     socket.on('message1', (data) => {
         console.log('Recieved from API ::', data)
+
+        //those methods are used to send data to the front end
         io.emit('message2', data);
         io.emit('message3', data);
     })
